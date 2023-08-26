@@ -1,0 +1,31 @@
+.gnbWrap {
+  padding: 5rem 0 3rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+}
+.gnbWrap ol {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  list-style: none;
+}
+.gnbWrap ol li a {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.utilBtns {
+  display: flex;
+  width: 100%;
+  padding: 5rem 0;
+  gap: 20px;
+  list-style: none;
+}
+.utilBtns a {
+  display: block;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+/*# sourceMappingURL=page.module.css.map */

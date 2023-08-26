@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import styles from './page.module.scss';
 import { useParams, useRouter } from 'next/navigation';
 
 export function Control() {
@@ -7,7 +8,7 @@ export function Control() {
   const router = useRouter();
   const id = params.id;
   return (
-    <ul>
+    <ul className={styles.utilBtns}>
       <li><Link href="/create">Create</Link></li>
       {id ? <>
           <li><Link href={"/update/"+id}>update</Link></li>

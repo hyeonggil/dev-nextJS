@@ -6,7 +6,7 @@ export default function Home() {
       <h2>Welconme</h2>
       Hellp, WEB!
 
-      <img src="/next.svg" />
+      <Image src="/next.svg" alt="Next.js Logo" width={300} height={200} />
     </>
   )
 }

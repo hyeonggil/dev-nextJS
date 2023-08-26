@@ -1,0 +1,13 @@
+@import "./_variables";
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+    
+}
+@function rem($pxValue) {
+    @return #{calc(stripUnit($pxValue) / stripUnit($html-font-size))}rem;
+}
+
+@function vw($value, $viewportWidth: 375) {
+  $vwValue: (calc($value / $viewportWidth) * 100vw);
+  @return $vwValue;
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import './globals.css'
+import styles from './page.module.scss';
 import { Control } from './Control'
 
 export const metadata = {
@@ -15,17 +16,24 @@ export default async function RootLayout({ children }) {
     // });
   const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+'topics', {cache:'no-store'});
   const topics = await resp.json();
+
   return (
     <html lang="en">
       <body>
-      <h1><Link href="/">WEB</Link></h1>  
-      <ol>
-        {topics.map((topic, i)=>{
-          return <li ttt={i} key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
-        })}
-      </ol>
-        {children}
-        <Control />
+      <div id="wrapper">
+        <h1><Link href="/">WEB</Link></h1>  
+        <div className={styles.gnbWrap}>
+          <ol>
+            {topics.map((topic, i)=>{
+              return <li ttt={i} key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
+            })}
+          </ol>
+        </div>
+        <div id="main">
+          {children}
+          <Control />
+        </div>
+      </div>
       </body>
     </html>
   )
